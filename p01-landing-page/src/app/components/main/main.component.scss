@@ -1,0 +1,42 @@
+main {
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1, h3 {
+        text-transform: uppercase;
+        padding: 0;
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    p {
+        width: 500px;
+        line-height: 24px;
+        margin: 24px 32px 32px 0;
+    }
+
+    img {
+        width: 40%;
+        height: 40%;
+    }
+
+    button {
+        background-color: #DD0031;
+        color: #FFFFFF;
+        border: 0;
+        border-radius: 4px;
+        width: 154px;
+        height: 48px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #FF0031;
+        }
+    }
+}
