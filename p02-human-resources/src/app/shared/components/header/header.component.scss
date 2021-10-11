@@ -1,0 +1,43 @@
+$primary: #60489D;
+$text: #2D2D2D;
+
+nav {
+    height: 56px;
+    width: 100%;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    position: fixed;
+    z-index: 99;
+
+    img {
+        height: 48%;
+        margin: 0 40px;
+    }
+    
+    ul {
+        margin: 0;
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    
+        li {
+            padding: 8px 32px;
+            font-weight: bold;
+            border-bottom: 4px solid #FFFFFF;
+    
+            &:hover {
+                border-bottom: 4px solid $primary;
+            }
+            
+            &.active {
+                border-bottom: 4px solid $primary;
+            }
+        }
+    }
+
+
+}
