@@ -1,9 +1,15 @@
 <app-header></app-header>
 <div class="hero-img"></div>
-<div class="container">
-    <h2>Colaboradores</h2>
-    <ul>
-        <li *ngFor="let c of colaboradores">{{ c.nome }} {{ c.salario }} {{ c.cargo }}</li>
-    </ul>
+<h2>COLABORADORES</h2>
+<div class="container">    
+    <div *ngFor="let c of colaboradores">
+        <span>{{ c.cargo.substr(0, 1).toUpperCase() }}</span>
+        <span>
+            {{ c.nome }}
+            <p>{{ c.cargo }}</p>
+        </span>        
+        <hr />
+        <span><fa-icon [icon]="faMoneyCheckAlt" class="icon"></fa-icon>{{ c.salario | currency : 'BRL' }}</span>        
+    </div>
 </div>
 <app-footer></app-footer>

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CollaboratorsListComponent } from './components/collaborators-list/collaborators-list.component';
 import { SharedModule } from 'src/app/shared/shared.module';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -11,7 +11,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    FontAwesomeModule
   ],
   exports: [
     CollaboratorsListComponent

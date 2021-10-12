@@ -1,6 +1,10 @@
 $primary: #60489D;
 $text: #2D2D2D;
 
+h2 {
+    text-align: center;
+}
+
 .hero-img {
     background-image: url('../../../../../assets/company.jpg');
     background-size: cover;
@@ -11,20 +15,65 @@ $text: #2D2D2D;
 
 .container {
     margin: 64px auto;
-    width: 650px;
+    width: 760px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
 
-    ul {
-        list-style: none;
+    div {
+        width: 240px;
         padding: 16px;
-        border-left: 2px solid $primary;
+        margin-bottom: 24px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
-        li {
-            padding: 8px 0;
-            
-            &:nth-of-type(even) {
-                background-color: #EEEEEE;
+        &:hover {
+            background-color: #eeeeee;
+        }
+
+        span:nth-child(1) {
+            width: 50px;
+            height: 50px;
+            background-color: #80a1c1;
+            color: #FFFFFF;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        span:nth-child(2) {
+            font-weight: bold;
+            margin: 8px;
+            display: inline-block;
+
+            p {
+                font-size: 0.8rem;
+                font-weight: normal;
+                padding: 0;
+                margin: 0;
             }
         }
-        
+
+        span:nth-child(4) {
+            margin-left: 56px;
+
+            .icon {
+                font-size: 16px;
+                color: #666;
+                margin-right: 8px;
+            }
+        }
+
+        hr {
+            border: 0;
+            height: 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    }
+
+    div:last-child {
+        span:nth-child(1) {
+            background-color: #5DA399;
+        }
     }
 }
