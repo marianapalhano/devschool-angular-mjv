@@ -1,0 +1,27 @@
+.menu {
+    width: 100%;
+    height: 56px;
+    background-color: #D6D7E9;   
+
+    ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+
+        li {
+            padding: 16px;
+            height: 56px;
+            text-transform: uppercase;            
+        }
+    }
+
+    .active {
+        border-bottom: 2px solid #25203E;
+        font-weight: bold;
+    }
+}
+
+.container {
+    margin: 0 auto 64px auto;
+    width: 90%;
+}

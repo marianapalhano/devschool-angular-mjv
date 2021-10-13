@@ -1,0 +1,22 @@
+ul {
+    list-style: none;
+    display: flex;
+    flex-flow: wrap;
+    margin: 56px auto;
+    padding: 0;
+
+    li {
+        padding: 16px;
+    }
+}
+
+.pagination {
+    text-align: center;
+    margin: 32px;
+
+    select {
+        border: 1px solid #25203E;
+        padding: 8px;
+        margin: 8px;
+    }
+}

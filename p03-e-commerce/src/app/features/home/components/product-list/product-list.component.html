@@ -1,0 +1,12 @@
+<ul>
+    <li *ngFor="let product of productList">
+        <app-product [product]="product"></app-product>
+    </li>
+</ul>
+<div class="pagination">
+    Página
+    <select name="page" id="page">
+        <option value="1">1</option>
+    </select>
+    de 12
+</div>

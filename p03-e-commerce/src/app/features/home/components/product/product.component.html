@@ -1,0 +1,6 @@
+<div class="card">
+    <fa-icon [icon]="faHeart" class="icon"></fa-icon>
+    <img src="../../../../../assets/products/{{product.id}}.jpg" />
+    <p class="name">{{ product.name }}</p>
+    <p class="price">{{ product.price | currency: 'BRL' }}</p>
+</div>
