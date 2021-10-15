@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faMoneyCheckAlt } from '@fortawesome/free-solid-svg-icons';
+import { Collaborator } from '../../models/collaborator.model';
 
 @Component({
   selector: 'app-collaborators-list',
@@ -7,7 +8,7 @@ import { faMoneyCheckAlt } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./collaborators-list.component.scss']
 })
 export class CollaboratorsListComponent implements OnInit {
-  colaboradores = [
+  colaboradores:Array<Collaborator> = [
     { id: 1, nome: 'Nathan Carlos', salario: 7000, cargo: 'Dev Pl' },
     { id: 2, nome: 'David Carlos', salario: 3000, cargo: 'Dev Jr' },
     { id: 3, nome: 'Mateus Augusto', salario: 3500, cargo: 'Dev Jr' },
