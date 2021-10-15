@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faMoneyCheckAlt } from '@fortawesome/free-solid-svg-icons';
+
 import { Collaborator } from '../../models/collaborator.model';
 
 @Component({
@@ -17,7 +17,7 @@ export class CollaboratorsListComponent implements OnInit {
     { id: 6, nome: 'Gabriel Miguel', salario: 9500, cargo: 'Dev Sr' },
     { id: 6, nome: 'Alan Jhonnes', salario: 11000, cargo: 'Arquiteto' } 
   ];
-  faMoneyCheckAlt = faMoneyCheckAlt;
+ 
 
   constructor() { }
 

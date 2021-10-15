@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Collaborator } from '../../models/collaborator.model';
+import { faMoneyCheckAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-collaborator',
@@ -7,7 +8,9 @@ import { Collaborator } from '../../models/collaborator.model';
   styleUrls: ['./collaborator.component.scss']
 })
 export class CollaboratorComponent implements OnInit {
+  faMoneyCheckAlt = faMoneyCheckAlt;
 
+  @Input()
   collaborator: Collaborator = {
     id: 0,
     nome: '',

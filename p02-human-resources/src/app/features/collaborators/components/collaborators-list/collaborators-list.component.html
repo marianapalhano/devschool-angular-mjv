@@ -1,13 +1,7 @@
 <div class="hero-img"></div>
 <h2>COLABORADORES</h2>
 <div class="container">    
-    <div *ngFor="let c of colaboradores">
-        <span>{{ c.cargo.substr(0, 1).toUpperCase() }}</span>
-        <span>
-            {{ c.nome }}
-            <p>{{ c.cargo }}</p>
-        </span>        
-        <hr />
-        <span><fa-icon [icon]="faMoneyCheckAlt" class="icon"></fa-icon>{{ c.salario | currency : 'BRL' }}</span>        
+    <div *ngFor="let collaborator of colaboradores">
+        <app-collaborator [collaborator]="collaborator"></app-collaborator>   
     </div>
 </div>
