@@ -16,7 +16,7 @@ export class CollaboratorComponent implements OnInit {
     nome: '',
     salario: 0,
     cargo: ''
-};
+  };
 
   constructor() { }
 

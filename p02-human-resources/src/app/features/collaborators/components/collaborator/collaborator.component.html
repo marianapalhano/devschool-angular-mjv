@@ -1,7 +1,7 @@
 <span>{{ collaborator.cargo.substr(0, 1).toUpperCase() }}</span>
 <span>
-    {{ collaborator.nome }}
-    <p>{{ collaborator.cargo }}</p>
+    {{ collaborator?.nome }}
+    <p>{{ collaborator?.cargo }}</p>
 </span>        
 <hr />
-<span><fa-icon [icon]="faMoneyCheckAlt" class="icon"></fa-icon>{{ collaborator.salario | currency : 'BRL' }}</span>
+<span><fa-icon [icon]="faMoneyCheckAlt" class="icon"></fa-icon>{{ collaborator?.salario | currency : 'BRL' }}</span>

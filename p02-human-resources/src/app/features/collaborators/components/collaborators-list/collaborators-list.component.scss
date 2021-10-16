@@ -30,11 +30,4 @@ h2 {
             background-color: #eeeeee;
         }
     }
-        
-    div:last-child {
-        &:nth-child(1) {
-            background-color: #5DA399;
-        }
-    }
-
 }
