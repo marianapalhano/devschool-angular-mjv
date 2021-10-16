@@ -24,4 +24,8 @@ export class CollaboratorComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  removeCollaborator() {
+    alert("Colaborador removido com sucesso");
+  }
+
 }
