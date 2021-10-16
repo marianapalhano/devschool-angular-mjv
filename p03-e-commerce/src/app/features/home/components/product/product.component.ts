@@ -11,11 +11,12 @@ export class ProductComponent implements OnInit {
   faHeart = faHeart;
 
   @Input()
-  product: Product = {
-    id: 0,
-    name: '',
-    price: 0
-  };
+  product?: Product; 
+  //= {
+  //   id: 0,
+  //   name: '',
+  //   price: 0
+  // };
 
   constructor() { }
 
