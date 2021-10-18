@@ -15,4 +15,12 @@ export class ProductCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getInstallment(price?: number) {
+    return price ? price/10 : price;
+  }
+
+  getBankSlip(price?: number) {
+    return price ? price*0.95 : price;
+  }
+
 }

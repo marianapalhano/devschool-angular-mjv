@@ -70,6 +70,8 @@ export class ProductListComponent implements OnInit {
     }
   ];
 
+  filteredProducts = this.products;
+
   constructor() { }
 
   ngOnInit(): void {
