@@ -59,7 +59,7 @@ export class ProductListComponent implements OnInit {
     {
         id: 9,
         description: 'JBL TUNE 500BT',
-        img: 'https://www.extra-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1449667479',
+        img: 'https://www.kceedevices.com/wp-content/uploads/2021/04/Tune_500BT.jpg',
         price: 300
     },
     {
