@@ -1,6 +1,6 @@
 <div>
     <h4>Busca</h4>
-    <input type="text" class="search-input">
+    <input type="text" class="search-input" (keyup)="searchFilter($event)">
 </div>
 <ul>
     <li *ngFor="let product of filteredProducts">

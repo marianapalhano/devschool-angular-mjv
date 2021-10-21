@@ -23,4 +23,8 @@ export class ProductCardComponent implements OnInit {
     return price ? price*0.95 : price;
   }
 
+  addToCart() {
+    alert(`${this.product?.description} adicionado ao carrinho com sucesso`);
+  }
+
 }

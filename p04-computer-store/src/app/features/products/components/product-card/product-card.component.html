@@ -4,5 +4,5 @@
     <h3>{{ product?.price | currency: 'BRL' }}</h3>
     <p>em 10x sem juros de {{ getInstallment(product?.price) | currency: 'BRL' }}</p>
     <p>ou {{ getBankSlip(product?.price) | currency: 'BRL' }} à vista no boleto</p>
-    <button>Adicionar ao carrinho</button>
+    <button (click)="addToCart()">Adicionar ao carrinho</button>
 </div>

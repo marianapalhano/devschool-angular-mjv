@@ -77,4 +77,10 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  searchFilter(event: any) {      
+    const products = this.products.filter(product => {
+        return product.description.toUpperCase().search(event.target.value.toUpperCase()) > -1;              
+    });
+    this.filteredProducts = products;   
+  }
 }
