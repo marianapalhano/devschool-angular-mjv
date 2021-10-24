@@ -1,3 +1,23 @@
+@import '../../../../../assets/styles/colors';
+
+div {
+    width: 100%;
+    background-color: $complementary-light-gray;
+
+    h4 {
+        padding: 16px 16px 16px 40px;
+        margin: 0;
+        display: inline-block;
+    }
+
+    input {
+        height: 32px;
+        width: 480px;
+        border-radius: 4px;
+        border: 1px solid black;
+    }
+}
+
 ul {
     display: flex;
     flex-wrap: wrap;
@@ -5,6 +25,6 @@ ul {
 
     li {
         width: 240px;
-        padding: 16px;
+        padding: 8px;
     }
 }
