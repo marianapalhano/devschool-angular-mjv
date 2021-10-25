@@ -1,0 +1,14 @@
+@import '../../../../assets/styles/colors';
+
+footer {
+    width: 100%;
+    min-height: 200px;
+    background-color: $complementary-light-gray;
+
+    ul {
+        width: 960px;
+        margin: 0 auto;
+        padding: 32px;
+        list-style: none;
+    }
+}

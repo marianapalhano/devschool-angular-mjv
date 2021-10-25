@@ -15,6 +15,17 @@ div {
         width: 480px;
         border-radius: 4px;
         border: 1px solid black;
+        padding: 8px;
+    }
+
+    button {
+        background-color: $primary-color;
+        color: white;
+        height: 32px;
+        width: 40px;
+        margin: 0 8px;
+        border: none;
+        border-radius: 4px;
     }
 }
 
