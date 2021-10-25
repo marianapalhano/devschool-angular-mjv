@@ -1,5 +1,10 @@
+<form action="submit" name="searchForm">
+    <label for="search">Busca</label>
+    <input type="text" name="search" (keyup)="search($event)" />
+</form>
+
 <ul>
-    <li *ngFor="let task of tasks">
+    <li *ngFor="let task of filteredTasks">
         <app-task [task]="task"></app-task>
     </li>
 </ul>

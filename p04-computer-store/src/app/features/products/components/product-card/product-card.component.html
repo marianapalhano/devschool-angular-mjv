@@ -1,8 +1,13 @@
-<div>
+<div class="card">
     <img [src]="product?.img" />
     <h4>{{ product?.description }}</h4>
     <h3>{{ product?.price | currency: 'BRL' }}</h3>
     <p>em 10x sem juros de {{ getInstallment(product?.price) | currency: 'BRL' }}</p>
     <p>ou {{ getBankSlip(product?.price) | currency: 'BRL' }} à vista no boleto</p>
     <button (click)="addToCart()">Adicionar ao carrinho</button>
+</div>
+
+<div class="notification disabled">
+    <img [src]="product?.img" />
+    <p>{{ product?.description }} adicionado ao carrinho com sucesso.</p>
 </div>

@@ -1,0 +1,19 @@
+div {
+    border-radius: 16px;
+    border: 1px solid black;
+    margin: 16px;
+    padding: 16px;
+    width: 450px;
+
+    h4 {
+        padding: 0;
+        margin: 0;
+        display: inline-block;
+    }
+
+    button {
+        font-size: 12px;
+        border: none;
+        border-radius: 16px;
+    }
+}

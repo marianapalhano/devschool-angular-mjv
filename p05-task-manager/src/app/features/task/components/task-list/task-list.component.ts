@@ -14,11 +14,20 @@ export class TaskListComponent implements OnInit {
     { id: 4, description: 'Reunião de alinhamento dia 18/07 as 14h', completed: true },
     { id: 5, description: 'Reunião de alinhamento projeto bradesco 18/07 as 16h', completed: false },
     { id: 6, description: 'Criar conteúdo da aula', completed: false }
-  ]
+  ];
+
+  filteredTasks?: Array<Task> = this.tasks;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  search(event: any) {
+    const tasks = this.tasks?.filter(task => {
+      return task.description.toUpperCase().search(event.target.value.toUpperCase()) > -1;
+    });
+    this.filteredTasks = tasks;
   }
 
 }

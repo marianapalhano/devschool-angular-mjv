@@ -10,6 +10,7 @@ export class ProductCardComponent implements OnInit {
   @Input()
   product?: Product;
 
+
   constructor() { }
 
   ngOnInit(): void {
@@ -24,7 +25,9 @@ export class ProductCardComponent implements OnInit {
   }
 
   addToCart() {
-    alert(`${this.product?.description} adicionado ao carrinho com sucesso`);
+    const notification = document.querySelector('.notification');
+    notification?.classList.toggle('disabled');
+    console.log(notification)
   }
 
 }
