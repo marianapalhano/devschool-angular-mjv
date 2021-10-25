@@ -1,9 +1,12 @@
+@import '../../../../../assets/styles/colors';
+
 div {
     border-radius: 16px;
-    border: 1px solid black;
     margin: 16px;
     padding: 16px;
-    width: 450px;
+    width: 596px;
+    color: white;
+    position: relative;
 
     h4 {
         padding: 0;
@@ -12,8 +15,33 @@ div {
     }
 
     button {
-        font-size: 12px;
+        font-size: 14px;
         border: none;
         border-radius: 16px;
+        padding: 0 8px;
+        margin-left: 16px;
+        cursor: pointer;
     }
+
+    .done {
+        color: $color-complete;
+        background-color: white;
+    }
+    .pending {
+        color: $color-pending;
+        background-color: white;
+    }
+
+    .icon {
+        position: absolute;
+        right: 16px;
+    }
+}
+
+.done-div {
+    background-color: $color-complete;
+}
+
+.pending-div {
+    background-color: $color-pending;
 }

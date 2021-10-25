@@ -1,4 +1,5 @@
-<div>
+<div [ngClass]="{ 'done-div': task?.completed == true, 'pending-div': task?.completed == false }">
     <h4>{{ task?.description }}</h4>
-    <button>{{ task?.completed ? 'Feito' : 'Pendente' }}</button>
+    <button (click)="setStatus()" [ngClass]="{ 'done': task?.completed == true, 'pending': task?.completed == false }">{{ task?.completed ? 'Feito' : 'Pendente' }}</button>
+    <fa-icon [icon]="faTrashAlt" class="icon"></fa-icon>
 </div>

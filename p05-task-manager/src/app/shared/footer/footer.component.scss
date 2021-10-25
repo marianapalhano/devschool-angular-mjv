@@ -3,6 +3,9 @@
 footer {
     width: 100%;
     min-height: 80px;
-    background-color: $color-dark-gray;
+    //background-color: $color-dark-gray;
     color: white;
+    position: absolute;
+    bottom: 0;
+    margin-top: 40px;
 }

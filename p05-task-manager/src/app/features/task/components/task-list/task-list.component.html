@@ -4,6 +4,7 @@
 </form>
 
 <ul>
+    <p *ngIf="filteredTasks?.length === 0">Não há tarefas com essa descrição</p>
     <li *ngFor="let task of filteredTasks">
         <app-task [task]="task"></app-task>
     </li>
