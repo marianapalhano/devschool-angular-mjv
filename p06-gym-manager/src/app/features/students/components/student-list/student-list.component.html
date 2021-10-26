@@ -1,1 +1,6 @@
-<p>student-list works!</p>
+<h2>Listagem de estudantes</h2>
+<ul>
+    <li *ngFor="let student of students">
+        <app-student [student]="student"></app-student>
+    </li>
+</ul>
