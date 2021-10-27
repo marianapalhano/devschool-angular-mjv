@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginModule } from './features/login/login.module';
-import { StudentsModule } from './features/students/students.module';
+import { MembersModule } from './features/members/members.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,7 @@ import { StudentsModule } from './features/students/students.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StudentsModule,
+    MembersModule,
     LoginModule
   ],
   providers: [],
