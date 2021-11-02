@@ -9,11 +9,17 @@ import { MembersService } from '../../services/members.service';
 })
 export class MemberListComponent implements OnInit {
   members?: Array<Member> = [];
+  filteredMembers?: Array<Member> = [];
 
   constructor(private membersService: MembersService) { }
 
   ngOnInit(): void {
     this.members = this.membersService.getMembers();
+    this.filteredMembers = this.members;
+  }
+
+  getMembersByName(event: any) {
+    const term = event.target.value;
   }
 
 }

@@ -1,8 +1,11 @@
 <main>
     <h2>Listagem de membros</h2>
+    <label>Buscar membro
+        <input type="text" />
+    </label>
     <ul>
-        <li *ngFor="let member of members">
-            <app-member [member]="member"></app-member>
+        <li *ngFor="let member of filteredMembers">
+            <app-member [member]="member" [card]="true"></app-member>
         </li>
     </ul>
 </main>

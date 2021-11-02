@@ -74,7 +74,7 @@ export class MembersService {
     return this.members;
   }
 
-  getMemberById(id: number) {
-    return this.members.find(member => member.id === Number(id));
+  getMemberById(id: string) {
+    return this.members.find(member => member.id === parseInt(id));
   }
 }
