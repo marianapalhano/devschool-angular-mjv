@@ -1,0 +1,20 @@
+@import '../../../../../assets/styles/colors';
+
+.card {
+    width: 768px;
+    padding: 16px;
+    background-color: $primary;
+    color: $secondary;
+
+    img {
+        width: 80px;
+        display: inline-block;
+    }
+
+    ul {
+        display: inline-block;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+}

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { monitorEventLoopDelay } from 'perf_hooks';
 import { Member } from '../models/member.model';
 
 @Injectable({
@@ -9,7 +8,8 @@ export class MembersService {
   members: Array<Member> = [
       {
         id: 1,
-        name: 'Daniela Santos',
+        memberImg: '../../../../../assets/img/member-img/1.jpg',
+        name: 'Daniela Lima Santos',
         email: 'danisantos@gmail.com',
         password: '12345678',
         monthlyFee: 250,
@@ -20,8 +20,9 @@ export class MembersService {
       },
       {
         id: 2,
-        name: 'Bruno Guedes',
-        email: 'b.guedes@gmail.com',
+        memberImg: '../../../../../assets/img/member-img/2.jpg',
+        name: 'Bruno Freitas',
+        email: 'b.freitas@gmail.com',
         password: '87654321',
         monthlyFee: 400,
         lastPayment: '2021-10-05',
@@ -31,8 +32,9 @@ export class MembersService {
       },
       {
         id: 3,
-        name: 'Clarisse Magno',
-        email: 'clarisse.magno@gmail.com',
+        memberImg: '../../../../../assets/img/member-img/3.jpg',
+        name: 'Clarisse Alves Barros',
+        email: 'clarisse.barros@gmail.com',
         password: 'a1b2c3d4',
         monthlyFee: 280,
         lastPayment: '2021-10-25',
@@ -42,6 +44,7 @@ export class MembersService {
       },
       {
         id: 4,
+        memberImg: '../../../../../assets/img/member-img/4.jpg',
         name: 'Lucas Fernandes Oliveira',
         email: 'lucasfoliveira@gmail.com',
         password: 'lucas123',
@@ -53,6 +56,7 @@ export class MembersService {
       },
       {
         id: 5,
+        memberImg: '../../../../../assets/img/member-img/5.jpg',
         name: 'Virginia Sousa de Paula',
         email: 'vsdepaula@gmail.com',
         password: 'vivi1234',

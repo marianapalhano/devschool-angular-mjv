@@ -1,5 +1,6 @@
 export interface Member {
     id: number,
+    memberImg: string,
     name: string,
     email: string,
     password: string,

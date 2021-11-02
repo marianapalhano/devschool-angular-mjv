@@ -4,6 +4,7 @@ import { MemberComponent } from './components/member/member.component';
 import { MemberListComponent } from './components/member-list/member-list.component';
 import { MembersComponent } from './pages/members/members.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { MemberDetailsComponent } from './pages/member-details/member-details.component';
 
 
 
@@ -11,7 +12,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
   declarations: [
     MemberComponent,
     MemberListComponent,
-    MembersComponent
+    MembersComponent,
+    MemberDetailsComponent
   ],
   imports: [
     CommonModule,

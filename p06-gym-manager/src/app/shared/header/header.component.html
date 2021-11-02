@@ -1,6 +1,13 @@
-<ul>
-    <li (click)="navigateByUrl('students')">Lista de estudantes</li>
-    <li (click)="navigateByUrl('login')">Login</li>
-    <li (click)="navigateByUrl('register')">Registro</li>
-    <li>Contato</li>
-</ul>
+<nav>
+    <img src="../../../assets/img/logo.png" alt="Workout Logo" (click)="navigateByUrl('home')" />
+    <ul>
+        <li (click)="navigateByUrl('members')">Lista de membros</li>
+        <li>Planos</li>
+        <li>Aulas</li>
+        <li>Contato</li>
+    </ul>
+    <ul>
+        <li (click)="navigateByUrl('register')" class="register">Registro</li>
+        <li (click)="navigateByUrl('login')">Login</li>        
+    </ul>
+</nav>

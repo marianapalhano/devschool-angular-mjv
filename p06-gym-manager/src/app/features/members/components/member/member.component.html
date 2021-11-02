@@ -1,4 +1,7 @@
 <div class="card">
-    <p>{{ member?.name }}</p>
-    <p>{{ member?.membership }}</p>
+    <img [src]="member?.memberImg" />
+    <ul>
+        <li>{{ member?.name }}</li>
+        <li>{{ member?.membership }}</li>
+    </ul>
 </div>

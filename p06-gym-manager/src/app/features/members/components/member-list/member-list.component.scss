@@ -1,0 +1,24 @@
+main {
+    min-height: 488px;
+    padding-left: 88px;
+    padding-top: 48px;
+    background-image: url('../../../../../assets/img/morgan-petroski-rx6wXNsXUOE-unsplash.jpg');
+    background-size: 50%;
+    background-position: 748px -124px;
+    background-repeat: no-repeat;
+
+    h2 {
+        font-size: 40px;
+        text-transform: uppercase;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            margin: 16px 0;
+        }
+    }
+}

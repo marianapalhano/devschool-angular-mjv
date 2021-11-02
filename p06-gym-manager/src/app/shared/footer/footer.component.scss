@@ -1,0 +1,14 @@
+@import '../../../assets/styles/colors';
+
+footer {
+    max-height: 240px;
+    width: 100%;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    ul {
+        list-style: none;
+    }
+}

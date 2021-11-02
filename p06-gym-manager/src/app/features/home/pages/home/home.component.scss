@@ -1,0 +1,25 @@
+@import '../../../../../assets/styles/colors';
+
+main {
+    width: 100%;
+    min-height: 648px;
+    background-image: url('../../../../../assets/img/anastase-maragos-9dzWZQWZMdE-unsplash.jpg');
+    background-size: cover;
+    background-position: 104px -144px;
+    color: white;
+    padding-left: 88px;
+
+    h1 {
+        font-size: 56px;
+        margin: 0;
+        padding-top: 136px;
+        text-transform: uppercase;
+    }
+
+    button {
+        border: 0;
+        padding: 16px 48px;
+        margin-top: 32px;
+        background-color: $primary;
+    }
+}
