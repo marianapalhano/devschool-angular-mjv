@@ -8,6 +8,7 @@
     </ul>
     <ul>
         <li (click)="navigateByUrl('register')" class="register">Registro</li>
-        <li (click)="navigateByUrl('login')">Login</li>        
+        <li (click)="navigateByUrl('login')" *ngIf="!member">Login</li>
+        <li (click)="exit()" *ngIf="member">Sair</li> 
     </ul>
 </nav>

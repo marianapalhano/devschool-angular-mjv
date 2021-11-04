@@ -79,8 +79,6 @@ export class MembersService {
   }
 
   getMemberByEmailAndPassword(email: string | undefined, password: string | undefined) {
-    return this.members.find(member => {
-      member.email === email && member.password === password;
-    });
+    return this.members.find(member => member.email === email && member.password === password);
   }
 }

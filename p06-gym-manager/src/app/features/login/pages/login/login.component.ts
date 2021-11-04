@@ -23,6 +23,9 @@ export class LoginComponent implements OnInit {
     const member = this.membersService.getMemberByEmailAndPassword(this.email, this.password);
     if (!member) {
       this.error = true;
+    } else {
+      sessionStorage.setItem('member', JSON.stringify(member));
+      this.router.navigateByUrl('members');
     }
   }
 

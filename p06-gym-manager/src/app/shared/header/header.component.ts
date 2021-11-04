@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Member } from 'src/app/features/members/models/member.model';
 
 @Component({
   selector: 'app-header',
@@ -7,14 +8,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  member?: Member;
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    const memberStorage = sessionStorage.getItem('member');
+    if (memberStorage) {
+      this.member = JSON.parse(memberStorage);
+    }
   }
 
   navigateByUrl(path: string) {
     this.router.navigateByUrl(path);
+  }
+
+  exit() {
+    sessionStorage.clear();
+    this.navigateByUrl('/login');
   }
 
 }
