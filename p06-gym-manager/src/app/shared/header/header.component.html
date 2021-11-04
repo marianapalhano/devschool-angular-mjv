@@ -1,14 +1,15 @@
 <nav>
     <img src="../../../assets/img/logo.png" alt="Workout Logo" (click)="navigateByUrl('home')" />
     <ul>
-        <li (click)="navigateByUrl('members')">Lista de membros</li>
         <li>Planos</li>
         <li>Aulas</li>
         <li>Contato</li>
     </ul>
-    <ul>
-        <li (click)="navigateByUrl('register')" class="register">Registro</li>
+    <ul class="member-menu">
+        <li (click)="navigateByUrl('register')" class="register" *ngIf="!member">Registrar</li>
         <li (click)="navigateByUrl('login')" *ngIf="!member">Login</li>
+        <li (click)="navigateByUrl('members')" *ngIf="member">Membros</li>
+        <li (click)="navigateByUrl('profile')" *ngIf="member">Perfil</li>
         <li (click)="exit()" *ngIf="member">Sair</li> 
     </ul>
 </nav>
