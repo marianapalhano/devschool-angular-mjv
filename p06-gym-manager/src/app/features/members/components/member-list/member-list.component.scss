@@ -7,11 +7,6 @@ main {
     background-position: 748px -124px;
     background-repeat: no-repeat;
 
-    h2 {
-        font-size: 40px;
-        text-transform: uppercase;
-    }
-
     ul {
         list-style: none;
         padding: 0;
@@ -23,7 +18,11 @@ main {
     }
     
     input {
-        width: 472px;
-        margin-left: 16px;
+        width: 456px;
+        margin: 0 16px 0 16px;
+    }
+
+    select {
+        padding: 4px;
     }
 }

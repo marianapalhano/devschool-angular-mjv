@@ -1,3 +1,16 @@
 main {
     min-height: 488px;
+    margin-left: 88px;
+    padding-top: 48px;
+
+    form {
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+
+        input {
+            margin-bottom: 16px;
+        }
+    }
+
 }

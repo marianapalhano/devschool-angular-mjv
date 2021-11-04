@@ -77,4 +77,10 @@ export class MembersService {
   getMemberById(id: string) {
     return this.members.find(member => member.id === parseInt(id));
   }
+
+  getMemberByEmailAndPassword(email: string | undefined, password: string | undefined) {
+    return this.members.find(member => {
+      member.email === email && member.password === password;
+    });
+  }
 }

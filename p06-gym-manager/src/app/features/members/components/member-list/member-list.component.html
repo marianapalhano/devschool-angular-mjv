@@ -1,8 +1,12 @@
 <main>
     <h2>Listagem de membros</h2>
     <label>Buscar membro
-        <input type="text" />
+        <input type="text" (keyup)="searchMember($event)" />
     </label>
+    <select [(ngModel)]="searchBy" name="search-by">
+        <option value="name">Busca por nome</option>
+        <option value="id">Busca por id</option>
+    </select>
     <ul>
         <li *ngFor="let member of filteredMembers">
             <app-member [member]="member" [card]="true"></app-member>

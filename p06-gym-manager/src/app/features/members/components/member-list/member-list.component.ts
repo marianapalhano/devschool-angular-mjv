@@ -10,6 +10,7 @@ import { MembersService } from '../../services/members.service';
 export class MemberListComponent implements OnInit {
   members?: Array<Member> = [];
   filteredMembers?: Array<Member> = [];
+  searchBy?: string = 'name';
 
   constructor(private membersService: MembersService) { }
 
@@ -20,6 +21,24 @@ export class MemberListComponent implements OnInit {
 
   getMembersByName(event: any) {
     const term = event.target.value;
+  }
+
+  searchMember(event: any) {
+    const term = event?.target.value;
+
+    if (this.searchBy === 'name') {
+      this.filteredMembers = this.members?.filter(member => {
+        return member.name.toUpperCase().search(term.toUpperCase()) > -1;
+      });
+    } else if (this.searchBy === 'id') {
+        this.filteredMembers = this.members?.filter(member => {
+          return member.id === parseInt(term);
+        });
+    }
+
+    if (this.filteredMembers?.length === 0 && term.length === 0) {
+      this.filteredMembers = this.members;
+    } 
   }
 
 }

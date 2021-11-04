@@ -7,7 +7,7 @@ import { MemberDetailsComponent } from './features/members/pages/member-details/
 import { MembersComponent } from './features/members/pages/members/members.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '' },
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'members', component: MembersComponent },

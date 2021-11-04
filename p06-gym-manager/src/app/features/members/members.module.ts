@@ -5,6 +5,7 @@ import { MemberListComponent } from './components/member-list/member-list.compon
 import { MembersComponent } from './pages/members/members.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MemberDetailsComponent } from './pages/member-details/member-details.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +18,8 @@ import { MemberDetailsComponent } from './pages/member-details/member-details.co
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ]
 })
 export class MembersModule { }
