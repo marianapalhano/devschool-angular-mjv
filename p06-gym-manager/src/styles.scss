@@ -41,6 +41,9 @@ button {
     &:disabled {
         background-color: $light-gray;
     }
+    &:hover {
+        background-color: $primary-light;
+    }
 }
 
 .error {
