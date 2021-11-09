@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Member } from '../models/member.model';
+import * as moment from 'moment';
 
 @Injectable({
   providedIn: 'root'
@@ -84,5 +85,28 @@ export class MembersService {
 
   generateNextId() {
     return this.members[this.members.length - 1].id + 1;
+  }
+
+  getDefaultMember(): Member {
+    const TodaysDate = moment().format('YYYY/MM/DD');
+    const newId = this.generateNextId();
+
+    return {
+      id: newId,
+      memberImg: `../../../../../assets/img/member-img/${newId}.jpg`,
+      name: '',
+      email: '',
+      password: '',
+      monthlyFee: 0,
+      lastPayment: TodaysDate,
+      validRegistration: true,
+      membership: 'Essential',
+      startDate: TodaysDate
+    }
+  }
+
+  createMember(member: Member) {
+    this.members.push(member);
+    return this.members;
   }
 }

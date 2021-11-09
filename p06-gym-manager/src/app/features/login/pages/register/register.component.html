@@ -2,20 +2,26 @@
 <main>
     <h2>Formulário de Registro</h2>
     <p>Preencha os campos abaixo para realizar seu cadastro.</p>
-    <!-- <form #memberForm="ngForm" action="submit" (submit)="authenticate()">
+    <form #memberForm="ngForm" action="submit" (submit)="submit(memberForm)">
         <label for="name">Nome</label>
             <input ngModel type="text" placeholder="Digite aqui o seu nome completo" name="name" required />
         <label for="email">E-mail</label>
             <input ngModel type="email" placeholder="Digite aqui o seu email" name="email" required />        
         <label for="password">Senha</label>
-            <input ngModel type="password" placeholder="Digite aqui a sua senha" name="password" required />        
-        <select ngModel name="membership">
+            <input ngModel type="password" placeholder="Digite aqui a sua senha" name="password" required />  
+        <label for="membership">Escolha um plano</label>      
+        <select ngModel name="membership" required>
             <option value="Essential">Essential</option>
             <option value="Ultimate">Ultimate</option>
             <option value="Premium">Premium</option>
         </select>
+        <label for="monthlyFee">Valor da mensalidade</label>
+            <input ngModel type="number" name="monthlyFee" required />
+        <label for="lastPayment">Último pagamento de mensalidade</label>
+            <input type="text" name="lastPayment" [(ngModel)]="member.lastPayment" disabled />
         <label for="date">Data de início</label>
-        <button [disabled]="!email || !password">Login</button>
-    </form> -->
+            <input type="text" name="startDate" [(ngModel)]="member.startDate" disabled />
+        <button type="submit" [disabled]="memberForm.invalid">Registrar</button>
+    </form>
 </main>
 <app-footer></app-footer>
