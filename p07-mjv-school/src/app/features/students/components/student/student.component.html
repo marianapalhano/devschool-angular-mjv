@@ -1,3 +1,8 @@
-<div class="card">
-    
+<div class="card" *ngIf="student">
+    <ul>
+        <li><h4>{{ student?.name }}</h4></li>
+        <li>Curso: {{ student?.course }}</li>
+        <li>Mensalidade: {{ student?.monthlyFee | currency: 'BRL' }}</li>
+        <li>Data último pagamento: {{ student?.lastPayment | date: 'longDate' }}</li>
+    </ul>
 </div>

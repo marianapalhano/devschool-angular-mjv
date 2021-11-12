@@ -1,1 +1,15 @@
-<p>student-list works!</p>
+<main>
+    <h2>Listagem de estudantes</h2>
+    <label>Buscar estudante
+        <input type="text" (keyup)="searchStudent($event)" />
+    </label>
+    <select [(ngModel)]="searchBy" name="search-by">
+        <option value="name">Busca por nome</option>
+        <option value="id">Busca por id</option>
+    </select>
+    <ul>
+        <li *ngFor="let student of filteredStudents">
+            <app-member [student]="student"></app-member>
+        </li>
+    </ul>
+</main>
