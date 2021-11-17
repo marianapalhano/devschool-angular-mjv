@@ -1,25 +1,31 @@
 <footer>
-    <div>
+    <div class="wide-column">
+        <a routerLink="/home"><img src="../../../../assets/img/logo-purple.png" alt="Amigo Animal"></a>
+        <p>
+            AmigoAnimal é um programa criado para estreitar laços entre pessoas que têm o
+            sonho de adotar um pet e nossas ONGs e protetores parceiros. Vamos juntos 
+            incentivar a adoção, conscientizar sobre a posse responsável e fomentar a cultura 
+            de doação em prol do bem estar animal.
+        </p>
+    </div>
+
+    <div class="narrow-column">
         <h2>Contato</h2>
         <ul>
             <li>amigoanimal@ong.br</li>
             <li>55 21 3745 1144</li>
-            <li>
-                <fa-icon [icon]="faTwitter"></fa-icon>
-                <fa-icon [icon]="faFacebook"></fa-icon>
-                <fa-icon [icon]="faInstagram"></fa-icon>
-            </li>
+            <li><fa-icon [icon]="faTwitter"></fa-icon> Twitter</li>
+            <li><fa-icon [icon]="faFacebook"></fa-icon> Facebook</li>
+            <li><fa-icon [icon]="faInstagram"></fa-icon> Instagram</li>
         </ul>
     </div>
-    <div>
-        <h2>Institucional</h2>
-    </div>
-    <div>
+
+    <div class="narrow-column">
         <h2>Como Ajudar?</h2>
         <ul>
-            <li>Quero adotar</li>
-            <li>Quero doar</li>
-            <li>ONGs/Protetores</li>
+            <li><a routerLink="/pets">Quero adotar</a></li>
+            <li><a routerLink="/howto-help">Quero doar</a></li>
+            <li><a routerLink="/ngos">ONGs/Protetores</a></li>
         </ul>
     </div>
 </footer>

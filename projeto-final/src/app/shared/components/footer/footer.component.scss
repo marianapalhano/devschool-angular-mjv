@@ -7,7 +7,30 @@ footer {
     flex-wrap: wrap;
 
     div {
-        margin: 40px;
-        width: 25%;
+        margin: 40px 72px;
+
+        img {
+            height: 56px;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            li {
+                padding: 8px 0;
+
+                a {
+                    text-decoration: none;
+                    color: #673AB7;
+                }
+            }
+        }
+    }
+    .wide-column {
+        width: 40%;
+    }
+    .narrow-colum {
+        width: 20%;
     }
 }
