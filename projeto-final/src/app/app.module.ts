@@ -8,6 +8,9 @@ import { HomeModule } from './features/home/home.module';
 import { LoginModule } from './features/login/login.module';
 import { NgosModule } from './features/ngos/ngos.module';
 import { PetsModule } from './features/pets/pets.module';
+import { AdoptersModule } from './features/adopters/adopters.module';
+import { HowtoHelpModule } from './features/howto-help/howto-help.module';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { PetsModule } from './features/pets/pets.module';
     HomeModule,
     LoginModule,
     NgosModule,
-    PetsModule
+    PetsModule,
+    AdoptersModule,
+    HowtoHelpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

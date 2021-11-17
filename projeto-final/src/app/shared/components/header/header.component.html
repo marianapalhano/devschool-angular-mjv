@@ -1,13 +1,8 @@
 <mat-toolbar color="primary">
-    <button class="example-icon" aria-label="Example icon-button with menu icon">
-      menu
-    </button>
-    <span>My App</span>
-    <span class="example-spacer"></span>
-    <button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      favorite
-    </button>
-    <button class="example-icon" aria-label="Example icon-button with share icon">
-      share
-    </button>
+    <a routerLink="/home"><img src="../../../../assets/img/logo.png" alt="Amigo Animal"></a>
+    <button mat-flat-button color="accent" routerLink="/pets">Quero adotar</button>
+    <a mat-button routerLink="/ngos">ONGS e Protetores</a>
+    <a mat-button routerLink="/howto-help">Como ajudar</a>
+    <a mat-button routerLink="/register">Cadastro</a>
+    <a mat-button routerLink="/login">Login</a>
   </mat-toolbar>

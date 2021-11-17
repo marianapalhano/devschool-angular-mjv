@@ -1,0 +1,13 @@
+footer {
+    width: 100%;
+    background-color: #EEE;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    div {
+        margin: 40px;
+        width: 25%;
+    }
+}
