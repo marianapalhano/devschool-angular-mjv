@@ -5,6 +5,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { PetDetailsComponent } from './pages/pet-details/pet-details.component';
 import { PetComponent } from './components/pet/pet.component';
 import { PetListComponent } from './components/pet-list/pet-list.component';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -17,7 +19,9 @@ import { PetListComponent } from './components/pet-list/pet-list.component';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    RouterModule
   ]
 })
 export class PetsModule { }

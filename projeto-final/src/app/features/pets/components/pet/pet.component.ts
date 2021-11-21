@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Ngo } from 'src/app/features/ngos/models/ngo.model';
+import { NgosService } from 'src/app/features/ngos/services/ngos.service';
 import { Pet } from '../../models/pet.model';
-import { PetsService } from '../../services/pets.service';
 
 @Component({
   selector: 'app-pet',
@@ -15,9 +17,27 @@ export class PetComponent implements OnInit {
   @Input()
   card: boolean = true;
 
-  constructor(private petsService: PetsService) { }
+  ngos: Array<Ngo> = [];
+  ngoName: string = '';
 
-  ngOnInit(): void {
-  }
+  constructor(
+    private ngosService: NgosService, 
+    private activatedRoute: ActivatedRoute
+  ) { }
+
+  ngOnInit(): void {   
+
+    this.activatedRoute.params.subscribe(params => {
+      if (this.pet && params['id']) {
+        console.log('entrou')
+        this.ngos = this.ngosService.getNgos();
+        this.ngos.filter(ngo => {
+          if (ngo.id === this.pet?.ngoId) {
+            this.ngoName = ngo.name;
+          }
+        });
+      };
+    });   
+}
 
 }

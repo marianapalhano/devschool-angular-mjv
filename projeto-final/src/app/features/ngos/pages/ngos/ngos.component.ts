@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Ngo } from '../../models/ngo.model';
+import { NgosService } from '../../services/ngos.service';
 
 @Component({
   templateUrl: './ngos.component.html',
@@ -6,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgosComponent implements OnInit {
 
-  constructor() { }
+  ngos: Array<Ngo> = [];
+
+  constructor(private ngosService: NgosService) { }
 
   ngOnInit(): void {
+    this.ngos = this.ngosService.getNgos();
   }
 
 }

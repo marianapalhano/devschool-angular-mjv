@@ -311,6 +311,44 @@ export class PetsService {
       personality: 'Pet sociável, dócil e carinhosa.',
       inclusionDate: '2021-08-11',
       adoptionFee: 20
+    },
+    {
+      id: 17,
+      imgUrl: '../../../../../assets/img/pets/17.jpg',
+      name: 'Bruce',
+      gender: 'Macho',
+      age: '5 anos',
+      microchip: 909090909098888,
+      species: 'Cachorro',
+      breed: 'SRD',
+      size: 'Grande',
+      location: {
+          city: 'Salvador',
+          state: 'BA'
+      },
+      ngoId: 1,
+      personality: 'Pet dócil, brincalhão e carinhoso.',
+      inclusionDate: '2019-03-19',
+      adoptionFee: 0
+    },
+    {
+      id: 18,
+      imgUrl: '../../../../../assets/img/pets/18.jpg',
+      name: 'Pipoca',
+      gender: 'Fêmea',
+      age: '1 ano 5 meses',
+      microchip: 6767676767567676,
+      species: 'Cachorro',
+      breed: 'SRD',
+      size: 'Médio',
+      location: {
+          city: 'Salvador',
+          state: 'BA'
+      },
+      ngoId: 1,
+      personality: 'Pet alegre, dócil e sociável.',
+      inclusionDate: '2021-05-07',
+      adoptionFee: 20
     }
   ]
 
@@ -320,12 +358,16 @@ export class PetsService {
     return this.pets;
   }
 
+  getPetById(id: number) {
+    return this.pets.find(pet => pet.id === Number(id));
+  }
+
   getPetByGender(gender: Gender) {
-    return this.pets.find((pet) => pet.gender === gender);
+    return this.pets.find(pet => pet.gender === gender);
   }
 
   getPetBySpecies(species: Species) {
-    return this.pets.find((pet) => pet.species === species);
+    return this.pets.find(pet => pet.species === species);
   }
 
   createPet(pet: Pet) {
