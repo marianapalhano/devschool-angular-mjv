@@ -1,6 +1,6 @@
-export type Gender = 'male' | 'female';
-export type Species = 'dog' | 'cat' | 'rodent' | 'bird';
-export type Breed = 'SRD' | 'Poodle' | 'Labrador' | 'Siames' | 'Angora';
+export type Gender = 'Macho' | 'Fêmea';
+export type Species = 'Cachorro' | 'Gato' | 'Roedor' | 'Pássaro';
+export type Breed = 'SRD' | 'Poodle' | 'Labrador' | 'Siames' | 'Angora' | 'Maltês';
 export type Size = 'Pequeno' | 'Médio' | 'Grande';
 
 export interface Pet {
@@ -18,6 +18,6 @@ export interface Pet {
     },
     ngoId: number,
     personality: string,
-    inclusionDate: Date | string
+    inclusionDate: Date | string,
     adoptionFee: number
 }

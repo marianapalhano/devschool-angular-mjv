@@ -4,9 +4,10 @@ export interface Adopter {
     name: string,
     birthdate: Date | string,
     email: string,
+    password: string,
     phone: number,
     address: string,
-    complement: string,
+    complement?: string,
     neighborhood: string,
     location: {
         city: string,
