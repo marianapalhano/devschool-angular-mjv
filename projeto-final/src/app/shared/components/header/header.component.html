@@ -1,8 +1,11 @@
 <mat-toolbar color="primary">
     <a routerLink="/home"><img src="../../../../assets/img/logo.png" alt="Amigo Animal"></a>
-    <button mat-flat-button color="accent" routerLink="/pets">Quero adotar</button>
-    <a mat-button routerLink="/ngos">ONGS e Protetores</a>
-    <a mat-button routerLink="/howto-help">Como ajudar</a>
-    <a mat-button routerLink="/register">Cadastro</a>
-    <a mat-button routerLink="/login">Login</a>
+    <button mat-flat-button color="accent" [routerLink]="['/pets']">Quero adotar</button>
+    <a mat-button [routerLink]="['/ngos']">ONGS e Protetores</a>
+    <a mat-button [routerLink]="['/howto-help']">Como ajudar</a>
+    <a mat-button [routerLink]="['/register']" *ngIf="!adopter">Cadastro</a>
+    <a mat-button [routerLink]="['/login']" *ngIf="!adopter">Login</a>
+    <a mat-button [routerLink]="['/adopters']" *ngIf="adopter">Adotantes</a>
+    <a mat-button [routerLink]="['/adopter-details', adopter.id]" *ngIf="adopter">Perfil</a>
+    <a mat-button (click)="exit()" *ngIf="adopter">Sair</a> 
   </mat-toolbar>

@@ -20,7 +20,8 @@ export class AdoptersService {
       location: {
           city: 'Salvador',
           state: 'BA'
-      }
+      },
+      pets: []
     },
     {
       id: 2,
@@ -36,7 +37,8 @@ export class AdoptersService {
       location: {
           city: 'Salvador',
           state: 'BA'
-      }
+      },
+      pets: []
     },
     {
       id: 3,
@@ -52,7 +54,8 @@ export class AdoptersService {
       location: {
           city: 'Fortaleza',
           state: 'CE'
-      }
+      },
+      pets: []
     },
     {
       id: 4,
@@ -68,7 +71,8 @@ export class AdoptersService {
       location: {
           city: 'Fortaleza',
           state: 'CE'
-      }
+      },
+      pets: []
     },
     {
       id: 5,
@@ -84,7 +88,8 @@ export class AdoptersService {
       location: {
           city: 'Recife',
           state: 'PE'
-      }
+      },
+      pets: []
     },
     {
       id: 6,
@@ -100,7 +105,8 @@ export class AdoptersService {
       location: {
           city: 'Recife',
           state: 'PE'
-      }
+      },
+      pets: []
     }
   ]
 

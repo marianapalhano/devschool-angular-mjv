@@ -12,5 +12,6 @@ export interface Adopter {
     location: {
         city: string,
         state: string
-    }
+    },
+    pets: Array<number>;
 }
