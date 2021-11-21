@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Pet } from '../../models/pet.model';
+import { PetsService } from '../../services/pets.service';
 
 @Component({
   templateUrl: './pets.component.html',
@@ -6,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PetsComponent implements OnInit {
 
-  constructor() { }
+  pets: Array<Pet> = [];
+
+  constructor(private petsService: PetsService) { }
 
   ngOnInit(): void {
+    this.pets = this.petsService.getPets();
   }
 
 }

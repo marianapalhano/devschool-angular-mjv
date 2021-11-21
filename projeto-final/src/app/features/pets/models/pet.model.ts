@@ -5,6 +5,7 @@ export type Size = 'Pequeno' | 'Médio' | 'Grande';
 
 export interface Pet {
     id: number,
+    imgUrl: string,
     name: string,
     gender: Gender,
     age: string,

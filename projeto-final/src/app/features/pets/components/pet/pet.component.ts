@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Pet } from '../../models/pet.model';
+import { PetsService } from '../../services/pets.service';
 
 @Component({
   selector: 'app-pet',
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PetComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  pet?: Pet;
+
+  @Input()
+  card: boolean = true;
+
+  constructor(private petsService: PetsService) { }
 
   ngOnInit(): void {
   }

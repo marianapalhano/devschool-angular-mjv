@@ -1,3 +1,26 @@
-.example-card {
-    width: 300px;
+.pet-card {
+    width: 208px;
+    margin: 16px;
+    border: 1px solid #EEE;
+
+    mat-card-actions {
+        text-align: center;
+    }
+
+    button + button {
+        margin-left: 16px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .info {
+        font-weight: 500;
+    }
+
+    &:hover {
+        border: 1px solid #FFD740;
+    }
 }
