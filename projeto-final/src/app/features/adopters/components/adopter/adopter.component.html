@@ -11,7 +11,8 @@
           </ul>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button (click)="navigateToDetails()">+ Detalhes</button>
+          <button mat-flat-button color="primary" (click)="navigateToDetails()">Detalhes</button>
+          <button mat-flat-button color="warn" (click)="removeAdopter()"><mat-icon>delete</mat-icon>Apagar</button>
         </mat-card-actions>
       </mat-card>
 </div>
@@ -23,7 +24,7 @@
         <mat-card-content>
           <ul>
               <li>Data de nascimento: {{ adopter.birthdate | date: 'longDate' }}</li>
-              <li>CPF: {{ adopter.cpf }}</li>
+              <li>CPF: {{ adopter.cpf | cpf }}</li>
               <li>Telefone: {{ adopter.phone }}</li>
               <li>Cidade: {{ adopter.location.city }}</li>
               <li>Estado: {{ adopter.location.state }}</li>

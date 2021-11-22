@@ -1,0 +1,11 @@
+.card {
+    width: 500px;
+    border: 1px solid #EEE;
+
+    mat-card-actions {
+        text-align: center;
+        button + button {
+            margin-left: 16px;
+        }
+    }
+}

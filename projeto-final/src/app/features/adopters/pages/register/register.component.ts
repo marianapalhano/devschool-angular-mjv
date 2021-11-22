@@ -3,6 +3,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Adopter } from '../../models/adopter.model';
 import { AdoptersService } from '../../services/adopters.service';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { MsgDialogComponent } from 'src/app/shared/dialogs/msg-dialog/msg-dialog.component';
 
 @Component({
   templateUrl: './register.component.html',
@@ -19,7 +21,7 @@ export class RegisterComponent implements OnInit {
     name: new FormControl('', [Validators.required, Validators.minLength(6)]),
     birthdate: new FormControl('', Validators.required),  
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', Validators.required),    
+    password: new FormControl('', [Validators.required, Validators.minLength(6)]),    
     phone: new FormControl('', [Validators.required, Validators.minLength(8)]),
     address: new FormControl('', [Validators.required, Validators.minLength(6)]),
     complement: new FormControl(''),
@@ -28,7 +30,11 @@ export class RegisterComponent implements OnInit {
     state: new FormControl('')
   });  
 
-  constructor(private adoptersService: AdoptersService, private router: Router) { }
+  constructor(
+    private adoptersService: AdoptersService, 
+    private router: Router,
+    public dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
   }
@@ -48,6 +54,10 @@ export class RegisterComponent implements OnInit {
     this.adopter.location.state = formValue.state;
 
     this.adoptersService.createAdopter(this.adopter);
+    this.dialog.open(MsgDialogComponent, {
+      width: '320px',
+      data: { title: 'Sucesso', message: 'Cadastro realizado.'}
+    });
     this.router.navigateByUrl('/login');
   }
 

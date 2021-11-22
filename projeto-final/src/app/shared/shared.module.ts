@@ -14,6 +14,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MsgDialogComponent } from './dialogs/msg-dialog/msg-dialog.component';
+import { CpfPipe } from './pipes/cpf.pipe';
 
 const materialModules = [
   MatToolbarModule,
@@ -24,17 +27,21 @@ const materialModules = [
   MatFormFieldModule,
   MatInputModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatDialogModule
 ];
 
 const components = [
   HeaderComponent,
-  FooterComponent
+  FooterComponent,
+  MsgDialogComponent
 ];
 
 @NgModule({
   declarations: [
-    ...components
+    ...components,
+    MsgDialogComponent,
+    CpfPipe
   ],
   imports: [
     CommonModule,
@@ -44,7 +51,8 @@ const components = [
   ],
   exports: [
     ...components,
-    ...materialModules
+    ...materialModules,
+    CpfPipe
   ]
 })
 export class SharedModule { }

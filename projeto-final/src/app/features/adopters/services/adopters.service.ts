@@ -38,7 +38,7 @@ export class AdoptersService {
           city: 'Salvador',
           state: 'BA'
       },
-      pets: []
+      pets: [7, 9]
     },
     {
       id: 3,
@@ -160,5 +160,13 @@ export class AdoptersService {
   addPetToAdopter(AdopterId: number, petId: number) {
     const adopter = this.getAdopterById(AdopterId);
     adopter?.pets.push(petId);
+  }
+
+  removeAdopter(id: number) {
+    console.log('id', id)
+    const adopterIndexFound = this.adopters.findIndex(adopter => adopter.id === id);
+    if (adopterIndexFound) {
+      this.adopters.splice(adopterIndexFound, 1);
+    }
   }
 }
