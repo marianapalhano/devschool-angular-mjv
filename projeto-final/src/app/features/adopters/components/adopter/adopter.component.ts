@@ -17,7 +17,7 @@ export class AdopterComponent implements OnInit {
   @Input()
   card: boolean = true;
 
-  petNames: Array<string> = [];
+  myPets: Array<Pet> = [];
   pets: Array<Pet> = [];
 
   constructor(
@@ -35,7 +35,7 @@ export class AdopterComponent implements OnInit {
         this.pets.filter(pet => {
           this.adopter?.pets.forEach(el => {
             if (pet.id === el) {
-              this.petNames.push(pet.name);
+              this.myPets.push(pet);
             }
           });
         })

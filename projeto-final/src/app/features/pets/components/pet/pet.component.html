@@ -14,7 +14,7 @@
     </mat-card-content>
     <mat-card-actions>
       <button mat-flat-button color="primary" [routerLink]="['/pet-details', pet.id]">Detalhes</button>
-      <button mat-flat-button color="accent">Adotar pet</button>
+      <button mat-flat-button color="accent" (click)="makeAdoption()">Adotar pet</button>
     </mat-card-actions>
 </mat-card>
 
@@ -38,7 +38,7 @@
       </ul>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-flat-button color="accent">Adotar pet</button>
+      <button mat-flat-button color="accent" (click)="makeAdoption()">Adotar pet</button>
     </mat-card-actions>
   </div>
   </mat-card>

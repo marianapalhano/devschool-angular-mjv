@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Adopter } from 'src/app/features/adopters/models/adopter.model';
+import { AdoptersService } from 'src/app/features/adopters/services/adopters.service';
 import { Ngo } from 'src/app/features/ngos/models/ngo.model';
 import { NgosService } from 'src/app/features/ngos/services/ngos.service';
 import { Pet } from '../../models/pet.model';
@@ -15,15 +17,23 @@ export class PetComponent implements OnInit {
   pet?: Pet;
 
   @Input()
-  card: boolean = true;
+  card: boolean = false;
 
   ngos: Array<Ngo> = [];
   ngoName: string = '';
 
+  adopter?: Adopter;
+
   constructor(
     private ngosService: NgosService, 
-    private activatedRoute: ActivatedRoute
-  ) { }
+    private activatedRoute: ActivatedRoute,
+    private adoptersService: AdoptersService
+  ) { 
+    const adopterStorage = sessionStorage.getItem('adopter');
+    if (adopterStorage) {
+      this.adopter = JSON.parse(adopterStorage);
+    }
+  }
 
   ngOnInit(): void {   
 
@@ -36,7 +46,18 @@ export class PetComponent implements OnInit {
           }
         });
       };
-    });   
-}
+    });
+  }
+
+
+  makeAdoption() {
+    if (this.adopter && this.pet) {
+      // adiciona pet no array pets do this.adopter
+      this.adoptersService.addPetToAdopter(this.adopter.id, this.pet.id);
+      alert('pet adotado com sucesso');
+    } else {
+      alert('Você precisa fazer login');
+    }
+  }
 
 }

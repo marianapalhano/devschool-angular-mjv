@@ -127,4 +127,38 @@ export class AdoptersService {
   getAdopterByEmailAndPassword(email: string, password: string) {
     return this.adopters.find((adopter) => adopter.email === email && adopter.password === password);
   }
+
+  generateNextId(): number {
+    return this.adopters[(this.adopters.length - 1)].id + 1;
+  }
+
+  getDefaultAdopter(): Adopter {
+    return {
+      id: this.generateNextId(),
+      cpf: 99999999999,
+      name: '',
+      birthdate: '1970-01-01',
+      email: '',
+      password: '',
+      phone: 999999999,
+      address: '',
+      complement: '',
+      neighborhood: '',
+      location: {
+        city: '',
+        state: ''
+      },
+      pets: []
+    }
+  }
+
+  createAdopter(adopter: Adopter) {
+    this.adopters.push(adopter);
+    return this.adopters;
+  }
+
+  addPetToAdopter(AdopterId: number, petId: number) {
+    const adopter = this.getAdopterById(AdopterId);
+    adopter?.pets.push(petId);
+  }
 }

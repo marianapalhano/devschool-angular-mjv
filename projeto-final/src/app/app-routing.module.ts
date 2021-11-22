@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
   { path: 'pets', component: PetsComponent },
-  { path: 'pet-details/:id', component: PetDetailsComponent},
+  { path: 'pet-details/:id', component: PetDetailsComponent },
   { path: 'ngos', component: NgosComponent },
   { path: 'howto-help', component: HowtoHelpComponent },
   { path: 'register', component: RegisterComponent },

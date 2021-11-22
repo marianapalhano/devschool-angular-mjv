@@ -22,6 +22,9 @@ import { RouterModule } from '@angular/router';
     SharedModule,
     FormsModule,
     RouterModule
+  ],
+  exports: [
+    PetListComponent
   ]
 })
 export class PetsModule { }

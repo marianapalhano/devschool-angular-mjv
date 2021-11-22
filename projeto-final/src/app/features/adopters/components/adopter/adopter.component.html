@@ -30,7 +30,7 @@
               <li>Endereço: {{ adopter.address }}</li>
               <li *ngIf="adopter.complement">Complemento: {{ adopter.complement }}</li>
               <li>Bairro: {{ adopter.neighborhood }}</li>
-              <li>Pets adotados: {{ petNames }}</li>
+              <li>Pets adotados: <app-pet-list [pets]="myPets"></app-pet-list></li>
           </ul>
         </mat-card-content>
       </mat-card>
