@@ -32,14 +32,15 @@ export class AdopterComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       if (this.adopter && params['id']) {
         this.pets = this.petsService.getPets();
-        // this.pets.filter(pet => {
-        //   if (pet.id in this.adopter.pets) {
-        //     this.petNames.push(pet.name);
-        //   }
-        // });
-      };
-    }); 
-
+        this.pets.filter(pet => {
+          this.adopter?.pets.forEach(el => {
+            if (pet.id === el) {
+              this.petNames.push(pet.name);
+            }
+          });
+        })
+      }
+    });
   }
 
   navigateToDetails() {
