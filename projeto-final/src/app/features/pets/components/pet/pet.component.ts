@@ -29,7 +29,6 @@ export class PetComponent implements OnInit {
 
     this.activatedRoute.params.subscribe(params => {
       if (this.pet && params['id']) {
-        console.log('entrou')
         this.ngos = this.ngosService.getNgos();
         this.ngos.filter(ngo => {
           if (ngo.id === this.pet?.ngoId) {

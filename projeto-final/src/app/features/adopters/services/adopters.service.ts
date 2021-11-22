@@ -21,7 +21,7 @@ export class AdoptersService {
           city: 'Salvador',
           state: 'BA'
       },
-      pets: []
+      pets: [1, 2, 3]
     },
     {
       id: 2,

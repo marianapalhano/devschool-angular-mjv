@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
       event.target.preventDefault();
     } else {
       sessionStorage.setItem('adopter', JSON.stringify(adopter));
-      this.router.navigateByUrl('adopters');
+      this.router.navigateByUrl(`adopter-details/${adopter.id}`);
     }
   }
 

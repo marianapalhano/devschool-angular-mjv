@@ -6,6 +6,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { AdopterComponent } from './components/adopter/adopter.component';
 import { AdopterListComponent } from './components/adopter-list/adopter-list.component';
 import { AdopterDetailsComponent } from './pages/adopter-details/adopter-details.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -19,7 +20,8 @@ import { AdopterDetailsComponent } from './pages/adopter-details/adopter-details
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ]
 })
 export class AdoptersModule { }
