@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
   hide = true;
 
   registerForm = new FormGroup({
-    cpf: new FormControl('', [Validators.required, Validators.minLength(11), validatesCpf()]),
+    cpf: new FormControl('', [Validators.required, Validators.maxLength(11), validatesCpf()]),
     name: new FormControl('', [Validators.required, Validators.minLength(6)]),
     birthdate: new FormControl('', Validators.required),  
     email: new FormControl('', [Validators.required, Validators.email]),

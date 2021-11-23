@@ -12,7 +12,6 @@ export function validatesCpf(): ValidatorFn {
     const regex = new RegExp('[0-9]{11}');
   
     if (
-      cpf == '00000000000' ||
       cpf == '11111111111' ||
       cpf == '22222222222' ||
       cpf == '33333333333' ||
@@ -22,6 +21,7 @@ export function validatesCpf(): ValidatorFn {
       cpf == '77777777777' ||
       cpf == '88888888888' ||
       cpf == '99999999999' ||
+      cpf == '00000000000' ||
       !regex.test(cpf)
     ) {
       valid = false;
