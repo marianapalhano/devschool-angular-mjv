@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Pet } from 'src/app/features/pets/models/pet.model';
 import { PetsService } from 'src/app/features/pets/services/pets.service';
 import { MsgDialogComponent } from 'src/app/shared/dialogs/msg-dialog/msg-dialog.component';
@@ -26,24 +26,27 @@ export class AdopterComponent implements OnInit {
     private adoptersService: AdoptersService, 
     private router: Router,
     private petsService: PetsService,
-    private activatedRoute: ActivatedRoute,
     public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
 
-    this.activatedRoute.params.subscribe(params => {
-      if (this.adopter && params['id']) {
-        this.pets = this.petsService.getPets();
-        this.pets.filter(pet => {
-          this.adopter?.pets.forEach(el => {
-            if (pet.id === el) {
-              this.myPets.push(pet);
-            }
-          });
-        })
-      }
-    });
+    /*
+      on adopter load:
+      - checks if the adopter exists
+      - creates myPets Array<Pet> from the pets Array<number>
+    */
+    if (this.adopter) {
+      this.pets = this.petsService.getPets();
+      this.pets.filter(pet => {
+        this.adopter?.pets.forEach(petId => {
+          if (pet.id === petId) {
+            this.myPets.push(pet);
+          }
+        });
+      });
+    }
+    /* end */
   }
 
   navigateToDetails() {

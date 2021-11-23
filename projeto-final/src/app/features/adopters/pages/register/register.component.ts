@@ -5,7 +5,7 @@ import { AdoptersService } from '../../services/adopters.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { MsgDialogComponent } from 'src/app/shared/dialogs/msg-dialog/msg-dialog.component';
-import { validatesCpf } from 'src/app/shared/validators/cpf-validator.directive';
+import { validatesCpf } from 'src/app/shared/validators/cpf/cpf-validator.directive';
 
 @Component({
   templateUrl: './register.component.html',

@@ -16,7 +16,7 @@
             </button>
         </mat-form-field>
         <button mat-flat-button color="accent" class="login-button" [disabled]="email.invalid || password.invalid">Entrar</button>
-        <p class="error" *ngIf="error">E-mail ou senha incorretos, tente novamente.</p>
+        <mat-error><p class="error" *ngIf="error">E-mail ou senha incorretos, tente novamente.</p></mat-error>
     </form>
 </main>
 <app-footer></app-footer>

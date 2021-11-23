@@ -16,8 +16,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MsgDialogComponent } from './dialogs/msg-dialog/msg-dialog.component';
-import { CpfPipe } from './pipes/cpf.pipe';
-import { CpfValidator } from './validators/cpf-validator.directive';
+import { CpfPipe } from './pipes/cpf/cpf.pipe';
+import { CpfValidator } from './validators/cpf/cpf-validator.directive';
+import { PhonePipe } from './pipes/phone/phone.pipe';
 
 const materialModules = [
   MatToolbarModule,
@@ -43,7 +44,8 @@ const components = [
     ...components,
     MsgDialogComponent,
     CpfPipe,
-    CpfValidator
+    CpfValidator,
+    PhonePipe
   ],
   imports: [
     CommonModule,
@@ -55,7 +57,8 @@ const components = [
     ...components,
     ...materialModules,
     CpfPipe,
-    CpfValidator
+    CpfValidator,
+    PhonePipe
   ]
 })
 export class SharedModule { }

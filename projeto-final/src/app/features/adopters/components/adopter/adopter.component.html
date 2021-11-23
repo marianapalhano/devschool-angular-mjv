@@ -25,7 +25,7 @@
           <ul>
               <li>Data de nascimento: {{ adopter.birthdate | date: 'longDate' }}</li>
               <li>CPF: {{ adopter.cpf | cpf }}</li>
-              <li>Telefone: {{ adopter.phone }}</li>
+              <li>Telefone: {{ adopter.phone | phone }}</li>
               <li>Cidade: {{ adopter.location.city }}</li>
               <li>Estado: {{ adopter.location.state }}</li>
               <li>Endereço: {{ adopter.address }}</li>

@@ -89,7 +89,7 @@ export class AdoptersService {
           city: 'Recife',
           state: 'PE'
       },
-      pets: []
+      pets: [10, 12]
     },
     {
       id: 6,
