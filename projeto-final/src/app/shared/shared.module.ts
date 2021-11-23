@@ -17,6 +17,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MsgDialogComponent } from './dialogs/msg-dialog/msg-dialog.component';
 import { CpfPipe } from './pipes/cpf.pipe';
+import { CpfValidator } from './validators/cpf-validator.directive';
 
 const materialModules = [
   MatToolbarModule,
@@ -41,7 +42,8 @@ const components = [
   declarations: [
     ...components,
     MsgDialogComponent,
-    CpfPipe
+    CpfPipe,
+    CpfValidator
   ],
   imports: [
     CommonModule,
@@ -52,7 +54,8 @@ const components = [
   exports: [
     ...components,
     ...materialModules,
-    CpfPipe
+    CpfPipe,
+    CpfValidator
   ]
 })
 export class SharedModule { }

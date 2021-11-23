@@ -102,7 +102,7 @@
             </mat-select>
           </mat-form-field></td>
         </tr></table>
-        <button mat-flat-button color="accent">Criar Conta</button>
+        <button mat-flat-button color="accent" [disabled]="registerForm.invalid">Criar Conta</button>
       </form>
 </main>
 <app-footer></app-footer>

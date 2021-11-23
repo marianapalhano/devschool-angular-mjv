@@ -5,6 +5,7 @@ import { AdoptersService } from '../../services/adopters.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { MsgDialogComponent } from 'src/app/shared/dialogs/msg-dialog/msg-dialog.component';
+import { validatesCpf } from 'src/app/shared/validators/cpf-validator.directive';
 
 @Component({
   templateUrl: './register.component.html',
@@ -17,7 +18,7 @@ export class RegisterComponent implements OnInit {
   hide = true;
 
   registerForm = new FormGroup({
-    cpf: new FormControl('', [Validators.required, Validators.minLength(11)]),
+    cpf: new FormControl('', [Validators.required, Validators.minLength(11), validatesCpf()]),
     name: new FormControl('', [Validators.required, Validators.minLength(6)]),
     birthdate: new FormControl('', Validators.required),  
     email: new FormControl('', [Validators.required, Validators.email]),
