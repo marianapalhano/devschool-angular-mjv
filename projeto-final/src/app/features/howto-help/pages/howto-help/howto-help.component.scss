@@ -8,8 +8,9 @@ main {
 
         li {
             padding: 8px 16px;
-            &:before {
-                content: '🐾 ';
+
+            mat-icon {
+                color: #673AB7;
             }
         }
     }

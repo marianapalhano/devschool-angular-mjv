@@ -59,7 +59,7 @@ export class AdopterComponent implements OnInit {
       this.dialog.open(MsgDialogComponent, {
         width: '320px',
         data: { title: 'Sucesso', message: 'Adotante excluído.'}
-      })
+      });
     }
   }
 }

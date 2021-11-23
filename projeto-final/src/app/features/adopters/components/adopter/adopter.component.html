@@ -4,15 +4,15 @@
         <mat-card-subtitle>{{ adopter.email }}</mat-card-subtitle>
         <mat-card-content>
           <ul>
-              <li>Data de nascimento: {{ adopter.birthdate | date: 'longDate' }}</li>
-              <li>Telefone: {{ adopter.phone }}</li>
-              <li>Cidade: {{ adopter.location.city }}</li>
-              <li>Estado: {{ adopter.location.state }}</li>
+              <li>Data de nascimento: <span class="info">{{ adopter.birthdate | date: 'longDate' }}</span></li>
+              <li>Telefone: <span class="info">{{ adopter.phone | phone }}</span></li>
+              <li>Cidade: <span class="info">{{ adopter.location.city }}</span></li>
+              <li>Estado: <span class="info">{{ adopter.location.state }}</span></li>
           </ul>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-flat-button color="primary" (click)="navigateToDetails()">Detalhes</button>
-          <button mat-flat-button color="warn" (click)="removeAdopter()"><mat-icon>delete</mat-icon>Apagar</button>
+          <button mat-raised-button color="primary" (click)="navigateToDetails()">Detalhes</button>
+          <button mat-raised-button color="warn" (click)="removeAdopter()"><mat-icon>delete</mat-icon>Apagar</button>
         </mat-card-actions>
       </mat-card>
 </div>
@@ -23,15 +23,18 @@
         <mat-card-subtitle>{{ adopter.email }}</mat-card-subtitle>
         <mat-card-content>
           <ul>
-              <li>Data de nascimento: {{ adopter.birthdate | date: 'longDate' }}</li>
-              <li>CPF: {{ adopter.cpf | cpf }}</li>
-              <li>Telefone: {{ adopter.phone | phone }}</li>
-              <li>Cidade: {{ adopter.location.city }}</li>
-              <li>Estado: {{ adopter.location.state }}</li>
-              <li>Endereço: {{ adopter.address }}</li>
-              <li *ngIf="adopter.complement">Complemento: {{ adopter.complement }}</li>
-              <li>Bairro: {{ adopter.neighborhood }}</li>
-              <li>Pets adotados: <app-pet-list [pets]="myPets"></app-pet-list></li>
+              <li>Data de nascimento: <span class="info">{{ adopter.birthdate | date: 'longDate' }}</span></li>
+              <li>CPF: <span class="info">{{ adopter.cpf | cpf }}</span></li>
+              <li>Telefone: <span class="info">{{ adopter.phone | phone }}</span></li>
+              <li>Cidade: <span class="info">{{ adopter.location.city }}</span></li>
+              <li>Estado: <span class="info">{{ adopter.location.state }}</span></li>
+              <li>Endereço: <span class="info">{{ adopter.address }}</span></li>
+              <li *ngIf="adopter.complement">Complemento: <span class="info">{{ adopter.complement }}</span></li>
+              <li>Bairro: <span class="info">{{ adopter.neighborhood }}</span></li>
+              <li>
+                <h2>Pets adotados:</h2>
+                <app-pet-list [pets]="myPets"></app-pet-list>
+              </li>
           </ul>
         </mat-card-content>
       </mat-card>

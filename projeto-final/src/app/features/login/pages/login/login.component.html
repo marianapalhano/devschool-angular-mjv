@@ -15,7 +15,7 @@
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
         </mat-form-field>
-        <button mat-flat-button color="accent" class="login-button" [disabled]="email.invalid || password.invalid">Entrar</button>
+        <button mat-raised-button color="accent" class="login-button" [disabled]="email.invalid || password.invalid">Entrar</button>
         <mat-error><p class="error" *ngIf="error">E-mail ou senha incorretos, tente novamente.</p></mat-error>
     </form>
 </main>

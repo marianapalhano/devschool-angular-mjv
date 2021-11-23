@@ -163,9 +163,8 @@ export class AdoptersService {
   }
 
   removeAdopter(id: number) {
-    console.log('id', id)
     const adopterIndexFound = this.adopters.findIndex(adopter => adopter.id === id);
-    if (adopterIndexFound) {
+    if (adopterIndexFound >= 0) {
       this.adopters.splice(adopterIndexFound, 1);
     }
   }

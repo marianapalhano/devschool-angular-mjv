@@ -20,7 +20,7 @@
         </mat-form-field>
           <button mat-flat-button color="primary" (click)="filterPets()">Filtrar</button>
     </mat-card>
-    <p *ngIf="filteredPets.length === 0">Sua busca não retornou nenhum resultado.</p>
+    <mat-error><p *ngIf="filteredPets.length === 0">Sua busca não retornou nenhum resultado.</p></mat-error>
     <app-pet-list [pets]="filteredPets"></app-pet-list>
 </main>
 <app-footer></app-footer>

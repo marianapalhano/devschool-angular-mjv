@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Adopter } from 'src/app/features/adopters/models/adopter.model';
+import { AdopterDetailsComponent } from 'src/app/features/adopters/pages/adopter-details/adopter-details.component';
 import { AdoptersService } from 'src/app/features/adopters/services/adopters.service';
 import { Ngo } from 'src/app/features/ngos/models/ngo.model';
 import { NgosService } from 'src/app/features/ngos/services/ngos.service';
@@ -26,10 +27,13 @@ export class PetComponent implements OnInit {
 
   adopter?: Adopter;
 
+  adoptersPet: boolean = false;
+
   constructor(
     private ngosService: NgosService, 
     private activatedRoute: ActivatedRoute,
     private adoptersService: AdoptersService,
+    private router: Router,
     private dialog: MatDialog
   ) { 
     const adopterStorage = sessionStorage.getItem('adopter');
@@ -40,16 +44,18 @@ export class PetComponent implements OnInit {
 
   ngOnInit(): void {   
 
-    this.activatedRoute.params.subscribe(params => {
-      if (this.pet && params['id']) {
-        this.ngos = this.ngosService.getNgos();
-        this.ngos.filter(ngo => {
-          if (ngo.id === this.pet?.ngoId) {
-            this.ngoName = ngo.name;
-          }
-        });
-      };
-    });
+    if (this.pet) {
+      this.ngos = this.ngosService.getNgos();
+      this.ngos.filter(ngo => {
+        if (ngo.id === this.pet?.ngoId) {
+          this.ngoName = ngo.name;
+        }
+      });
+    };
+
+    if (this.activatedRoute.component === AdopterDetailsComponent) {
+      this.adoptersPet = true;
+    }
   }
 
 
@@ -60,7 +66,8 @@ export class PetComponent implements OnInit {
       this.dialog.open(MsgDialogComponent, {
         width: '350px',
         data: { title: 'Parabéns', message: 'Você iniciou o processo de adoção.' }
-      })
+      });
+      this.router.navigateByUrl(`/adopter-details/${this.adopter.id}`);
     } else {
       this.dialog.open(MsgDialogComponent, {
         width: '350px',

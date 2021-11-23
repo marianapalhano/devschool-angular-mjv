@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
     complement: new FormControl(''),
     neighborhood: new FormControl('', [Validators.required, Validators.minLength(5)]),
     city: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    state: new FormControl('')
+    state: new FormControl('', [Validators.required])
   });  
 
   constructor(

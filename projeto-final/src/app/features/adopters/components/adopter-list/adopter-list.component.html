@@ -1,7 +1,6 @@
 <main>
     <h2>Listagem de adotantes</h2>
     <mat-card>Busca
-        <!-- <input type="text" (keyup)="searchAdopter($event)" /> -->
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Digite o que procura</mat-label>
             <input matInput placeholder="Ex. Maria" (keyup)="searchAdopter($event)">
@@ -19,6 +18,7 @@
         <li *ngFor="let adopter of filteredAdopters">
             <app-adopter [adopter]="adopter" [card]="true"></app-adopter>
         </li>
+        <mat-error><p *ngIf="filteredAdopters?.length === 0">Sua busca não retornou nenhum resultado.</p></mat-error>        
     </ul>
 </main>
 
