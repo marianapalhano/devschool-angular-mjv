@@ -14,6 +14,7 @@ import { HowtoHelpModule } from './features/howto-help/howto-help.module';
 import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+import { SharedModule } from './shared/shared.module';
 registerLocaleData(localePt); 
 
 @NgModule({
@@ -24,6 +25,7 @@ registerLocaleData(localePt);
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    SharedModule,
     HomeModule,
     LoginModule,
     NgosModule,

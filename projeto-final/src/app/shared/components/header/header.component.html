@@ -1,11 +1,11 @@
 <mat-toolbar color="primary">
-    <a routerLink="/home"><img src="../../../../assets/img/logo.png" alt="Amigo Animal"></a>
-    <button mat-flat-button color="accent" [routerLink]="['/pets']">Quero adotar</button>
-    <a mat-button [routerLink]="['/ngos']">ONGS e Protetores</a>
-    <a mat-button [routerLink]="['/howto-help']">Como ajudar</a>
-    <a mat-button [routerLink]="['/register']" *ngIf="!adopter">Cadastro</a>
-    <a mat-button [routerLink]="['/login']" *ngIf="!adopter">Login</a>
-    <a mat-button [routerLink]="['/adopters']" *ngIf="adopter">Adotantes</a>
-    <a mat-button [routerLink]="['/adopter-details', adopter.id]" *ngIf="adopter">Perfil</a>
+    <a [routerLink]="['/home']"><img src="../../../../assets/img/logo.png" alt="Amigo Animal"></a>
+    <a mat-button [routerLink]="['/pets']" routerLinkActive="active-link">Quero adotar</a>
+    <a mat-button [routerLink]="['/ngos']" routerLinkActive="active-link">ONGS e Protetores</a>
+    <a mat-button [routerLink]="['/howto-help']" routerLinkActive="active-link">Como ajudar</a>
+    <a mat-button [routerLink]="['/register']" *ngIf="!adopter" routerLinkActive="active-link">Cadastro</a>
+    <a mat-button [routerLink]="['/login']" *ngIf="!adopter" routerLinkActive="active-link">Login</a>
+    <a mat-button [routerLink]="['/adopters']" *ngIf="adopter" routerLinkActive="active-link">Adotantes</a>
+    <a mat-button [routerLink]="['/adopter-details', adopter.id]" *ngIf="adopter" routerLinkActive="active-link">Perfil</a>
     <a mat-button (click)="exit()" *ngIf="adopter">Sair</a> 
   </mat-toolbar>
