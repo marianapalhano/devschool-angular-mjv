@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Adopter } from 'src/app/features/adopters/models/adopter.model';
 import { AdopterDetailsComponent } from 'src/app/features/adopters/pages/adopter-details/adopter-details.component';
 import { AdoptersService } from 'src/app/features/adopters/services/adopters.service';
+import { LoginService } from 'src/app/features/login/services/login.service';
 import { Ngo } from 'src/app/features/ngos/models/ngo.model';
 import { NgosService } from 'src/app/features/ngos/services/ngos.service';
 import { MsgDialogComponent } from 'src/app/shared/dialogs/msg-dialog/msg-dialog.component';
@@ -34,12 +35,13 @@ export class PetComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private adoptersService: AdoptersService,
     private router: Router,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private loginService: LoginService
   ) { 
-    const adopterStorage = sessionStorage.getItem('adopter');
-    if (adopterStorage) {
-      this.adopter = JSON.parse(adopterStorage);
-    }
+
+    loginService.loggedAdopter.subscribe(value => {
+      this.adopter = value;
+    })
   }
 
   ngOnInit(): void {   

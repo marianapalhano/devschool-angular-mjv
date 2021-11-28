@@ -9,6 +9,7 @@ import { validatesCpf } from 'src/app/shared/validators/cpf/cpf-validator.direct
 import {MAT_MOMENT_DATE_FORMATS, MomentDateAdapter} from '@angular/material-moment-adapter';
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
 import * as _moment from 'moment';
+import { LoginService } from 'src/app/features/login/services/login.service';
 
 @Component({
   templateUrl: './register.component.html',
@@ -41,7 +42,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private adoptersService: AdoptersService, 
     private router: Router,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private loginService: LoginService
   ) { }
 
   ngOnInit(): void {
@@ -49,7 +51,7 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     const formValue = this.registerForm.value;
-    this.adopter.cpf = formValue.cpf;
+    this.adopter.cpf = Number(formValue.cpf);
     this.adopter.name = formValue.name;
     this.adopter.birthdate = formValue.birthdate;
     this.adopter.email = formValue.email;
@@ -62,11 +64,13 @@ export class RegisterComponent implements OnInit {
     this.adopter.location.state = formValue.state;
 
     this.adoptersService.createAdopter(this.adopter);
+    this.loginService.setLoggedAdopter(this.adopter);
     this.dialog.open(MsgDialogComponent, {
       width: '320px',
       data: { title: 'Sucesso', message: 'Cadastro realizado.'}
     });
-    this.router.navigateByUrl('/login');
+    
+    this.router.navigateByUrl(`adopter-details/${this.adopter.id}`);
   }
 
 }

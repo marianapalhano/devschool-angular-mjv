@@ -155,7 +155,7 @@ export class AdoptersService {
   createAdopter(adopter: Adopter) {
     this.adopters.push(adopter);
     return this.adopters;
-  }
+  } 
 
   addPetToAdopter(AdopterId: number, petId: number) {
     const adopter = this.getAdopterById(AdopterId);

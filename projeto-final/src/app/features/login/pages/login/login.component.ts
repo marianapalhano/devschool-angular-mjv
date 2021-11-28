@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdoptersService } from 'src/app/features/adopters/services/adopters.service';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   templateUrl: './login.component.html',
@@ -30,23 +31,21 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private adoptersService: AdoptersService,
-    private router: Router
+    private router: Router,
+    private loginService: LoginService
   ) { }
 
   ngOnInit(): void {
   }
 
-  authenticate(event: any) {
+  authenticate() {
+    
     const adopter = this.adoptersService.getAdopterByEmailAndPassword(this.email.value, this.password.value);
     if (!adopter) {
       this.error = true;
-      event.target.preventDefault();
     } else {
-      sessionStorage.setItem('adopter', JSON.stringify(adopter));
-      this.router.navigateByUrl(`adopter-details/${adopter.id}`).then(() => {
-        window.location.reload();
-      });;
+      this.loginService.setLoggedAdopter(adopter);
+      this.router.navigateByUrl(`adopter-details/${adopter.id}`);
     }
   }
-
 }

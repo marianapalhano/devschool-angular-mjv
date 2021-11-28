@@ -1,6 +1,6 @@
 <main>
     <h1>Login</h1>
-    <form class="login-form" (submit)="authenticate($event)">
+    <form class="login-form" (submit)="authenticate()">
         <mat-form-field appearance="fill">
             <mat-label>Digite seu email</mat-label>
             <input matInput placeholder="maria@exemplo.com" [formControl]="email" required>

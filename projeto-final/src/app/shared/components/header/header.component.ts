@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Adopter } from 'src/app/features/adopters/models/adopter.model';
+import { LoginService } from 'src/app/features/login/services/login.service';
 
 @Component({
   selector: 'app-header',
@@ -9,21 +10,27 @@ import { Adopter } from 'src/app/features/adopters/models/adopter.model';
 })
 export class HeaderComponent implements OnInit {
   adopter?: Adopter;
+  isUserLoggedIn: boolean = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private loginService: LoginService) {
+    this.loginService.loggedAdopter.subscribe( value => {
+      if(value) {
+        this.adopter = value;
+        this.isUserLoggedIn = true;
+      } else {
+        this.isUserLoggedIn = false;
+      }
+      
+  });
+  }
 
   ngOnInit(): void {
-    const adopterStorage = sessionStorage.getItem('adopter');
-    if (adopterStorage) {
-      this.adopter = JSON.parse(adopterStorage);
-    }
+
   }
 
   exit() {
-    sessionStorage.clear();
-    this.router.navigateByUrl('/login').then(() => {
-      window.location.reload();
-    });;
+    this.loginService.logoutAdopter();
+    this.router.navigateByUrl('/login');
   }
 
 }
