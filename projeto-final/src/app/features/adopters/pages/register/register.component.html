@@ -42,16 +42,11 @@
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field appearance="fill" class="date-form-field">
+        <mat-form-field appearance="fill">
           <mat-label>Data de nascimento</mat-label>
-          <input matInput [matDatepicker]="datepicker" formControlName="birthdate">
-          <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
-          <mat-datepicker #datepicker>
-            <mat-datepicker-actions>
-              <button mat-button matDatepickerCancel>Cancelar</button>
-              <button mat-raised-button color="primary" matDatepickerApply>Aplicar</button>
-            </mat-datepicker-actions>
-          </mat-datepicker>
+          <input matInput [matDatepicker]="picker" formControlName="birthdate">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
 
         <mat-form-field class="example-full-width" appearance="fill">

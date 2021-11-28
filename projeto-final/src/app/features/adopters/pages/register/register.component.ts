@@ -6,10 +6,17 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { MsgDialogComponent } from 'src/app/shared/dialogs/msg-dialog/msg-dialog.component';
 import { validatesCpf } from 'src/app/shared/validators/cpf/cpf-validator.directive';
+import {MAT_MOMENT_DATE_FORMATS, MomentDateAdapter} from '@angular/material-moment-adapter';
+import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
+import * as _moment from 'moment';
 
 @Component({
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.scss'],
+  providers: [
+    {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
+    {provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS},
+  ],
 })
 export class RegisterComponent implements OnInit {
 
