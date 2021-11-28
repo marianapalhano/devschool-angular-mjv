@@ -38,7 +38,7 @@ export class AdoptersService {
           city: 'Salvador',
           state: 'BA'
       },
-      pets: [7, 9]
+      pets: []
     },
     {
       id: 3,
@@ -89,7 +89,7 @@ export class AdoptersService {
           city: 'Recife',
           state: 'PE'
       },
-      pets: [10, 12]
+      pets: []
     },
     {
       id: 6,

@@ -25,7 +25,8 @@ export class PetsService {
       ngoId: 1,
       personality: 'Pet dócil, alegre e ama brincar.',
       inclusionDate: '2021-05-22',
-      adoptionFee: 30
+      adoptionFee: 30,
+      isAdopted: true
     },
     {
       id: 2,
@@ -44,7 +45,8 @@ export class PetsService {
       ngoId: 2,
       personality: 'Pet dócil, carinhosa e comilona.',
       inclusionDate: '2021-10-19',
-      adoptionFee: 20
+      adoptionFee: 20,
+      isAdopted: true
     },
     {
       id: 3,
@@ -63,7 +65,8 @@ export class PetsService {
       ngoId: 3,
       personality: 'Pet dorminhoca, alegre e sociável.',
       inclusionDate: '2021-09-15',
-      adoptionFee: 30
+      adoptionFee: 30,
+      isAdopted: false
     },
     {
       id: 4,
@@ -82,7 +85,8 @@ export class PetsService {
       ngoId: 1,
       personality: 'Pet sociável, brincalhão e alegre.',
       inclusionDate: '2021-09-29',
-      adoptionFee: 30
+      adoptionFee: 30,
+      isAdopted: false
     },
     {
       id: 5,
@@ -101,7 +105,8 @@ export class PetsService {
       ngoId: 2,
       personality: 'Pet dócil e sociável com pessoas e cães.',
       inclusionDate: '2021-07-02',
-      adoptionFee: 15
+      adoptionFee: 15,
+      isAdopted: false
     },
     {
       id: 6,
@@ -120,7 +125,8 @@ export class PetsService {
       ngoId: 3,
       personality: 'Pet brincalhão e muito carinhoso.',
       inclusionDate: '2021-11-05',
-      adoptionFee: 30
+      adoptionFee: 30,
+      isAdopted: false
     },
     {
       id: 7,
@@ -139,7 +145,8 @@ export class PetsService {
       ngoId: 1,
       personality: 'Pet divertida, tranquila e sociável.',
       inclusionDate: '2021-10-02',
-      adoptionFee: 30
+      adoptionFee: 30,
+      isAdopted: false
     },
     {
       id: 8,
@@ -158,7 +165,8 @@ export class PetsService {
       ngoId: 2,
       personality: 'Pet curiosa, sociável e brincalhona.',
       inclusionDate: '2021-09-18',
-      adoptionFee: 25
+      adoptionFee: 25,
+      isAdopted: false
     },
     {
       id: 9,
@@ -177,7 +185,8 @@ export class PetsService {
       ngoId: 3,
       personality: 'Pet carinhoso, curioso e apegado a todos.',
       inclusionDate: '2021-01-20',
-      adoptionFee: 0
+      adoptionFee: 0,
+      isAdopted: false
     },
     {
       id: 10,
@@ -196,7 +205,8 @@ export class PetsService {
       ngoId: 1,
       personality: 'Pet tranquila, dócil e companheira.',
       inclusionDate: '2020-04-26',
-      adoptionFee: 0
+      adoptionFee: 0,
+      isAdopted: false
     },
     {
       id: 11,
@@ -215,7 +225,8 @@ export class PetsService {
       ngoId: 2,
       personality: 'Pet comilão, brincalhão e divertido.',
       inclusionDate: '2021-10-08',
-      adoptionFee: 30
+      adoptionFee: 30,
+      isAdopted: false
     },
     {
       id: 12,
@@ -234,7 +245,8 @@ export class PetsService {
       ngoId: 3,
       personality: 'Pet dócil, brincalhão e esperto.',
       inclusionDate: '2021-11-03',
-      adoptionFee: 30
+      adoptionFee: 30,
+      isAdopted: false
     },
     {
       id: 13,
@@ -253,7 +265,8 @@ export class PetsService {
       ngoId: 1,
       personality: 'Pet tranquilo e muito dócil, companheiro.',
       inclusionDate: '2020-03-13',
-      adoptionFee: 0
+      adoptionFee: 0,
+      isAdopted: false
     },
     {
       id: 14,
@@ -272,7 +285,8 @@ export class PetsService {
       ngoId: 2,
       personality: 'Pet carinhosa, dócil, adora outros cães.',
       inclusionDate: '2020-10-30',
-      adoptionFee: 0
+      adoptionFee: 0,
+      isAdopted: false
     },
     {
       id: 15,
@@ -291,7 +305,8 @@ export class PetsService {
       ngoId: 3,
       personality: 'Pet alegre, brincalhão e curioso.',
       inclusionDate: '2021-06-14',
-      adoptionFee: 20
+      adoptionFee: 20,
+      isAdopted: false
     },
     {
       id: 16,
@@ -310,7 +325,8 @@ export class PetsService {
       ngoId: 1,
       personality: 'Pet sociável, dócil e carinhosa.',
       inclusionDate: '2021-08-11',
-      adoptionFee: 20
+      adoptionFee: 20,
+      isAdopted: false
     },
     {
       id: 17,
@@ -329,7 +345,8 @@ export class PetsService {
       ngoId: 1,
       personality: 'Pet dócil, brincalhão e carinhoso.',
       inclusionDate: '2019-03-19',
-      adoptionFee: 0
+      adoptionFee: 0,
+      isAdopted: false
     },
     {
       id: 18,
@@ -348,7 +365,8 @@ export class PetsService {
       ngoId: 1,
       personality: 'Pet alegre, dócil e sociável.',
       inclusionDate: '2021-05-07',
-      adoptionFee: 20
+      adoptionFee: 20,
+      isAdopted: false
     }
   ]
 
@@ -356,6 +374,14 @@ export class PetsService {
 
   getPets() {
     return this.pets;
+  }
+
+  getPetsForAdoption() {
+    return this.pets.filter(pet => pet.isAdopted === false);
+  }
+
+  getAdoptedPets() {
+    return this.pets.filter(pet => pet.isAdopted === true);
   }
 
   getPetById(id: number) {
@@ -392,7 +418,8 @@ export class PetsService {
     ngoId: number,
     personality: string,
     inclusionDate: Date | string,
-    adoptionFee: number
+    adoptionFee: number,
+    isAdopted: boolean
   ) {
     return {
       id,
@@ -408,7 +435,8 @@ export class PetsService {
       ngoId,
       personality,
       inclusionDate,
-      adoptionFee
+      adoptionFee,
+      isAdopted
     };
   }
 
@@ -429,7 +457,8 @@ export class PetsService {
       0,
       '',
       todaysDate,
-      0
+      0,
+      false
     );
   }
 

@@ -20,5 +20,6 @@ export interface Pet {
     ngoId: number,
     personality: string,
     inclusionDate: Date | string,
-    adoptionFee: number
+    adoptionFee: number,
+    isAdopted: boolean
 }

@@ -16,7 +16,7 @@ export class PetsComponent implements OnInit {
   constructor(private petsService: PetsService) { }
 
   ngOnInit(): void {
-    this.pets = this.petsService.getPets();
+    this.pets = this.petsService.getPetsForAdoption();
     this.filteredPets = this.pets;
   }
 

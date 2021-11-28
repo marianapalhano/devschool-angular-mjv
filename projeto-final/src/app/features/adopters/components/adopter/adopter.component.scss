@@ -1,6 +1,10 @@
 .card {
-    width: 340px;
+    width: 320px;
     border: 1px solid #EEE;
+
+    mat-card-title {
+        font-size: 18px;
+    }
 
     &:hover {
         border: 1px solid #FFD740;

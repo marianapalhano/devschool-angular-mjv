@@ -19,13 +19,11 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  navigateByUrl(path: string) {
-    this.router.navigateByUrl(path);
-  }
-
   exit() {
     sessionStorage.clear();
-    this.navigateByUrl('/login');
+    this.router.navigateByUrl('/login').then(() => {
+      window.location.reload();
+    });;
   }
 
 }

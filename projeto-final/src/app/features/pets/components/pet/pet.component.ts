@@ -61,6 +61,7 @@ export class PetComponent implements OnInit {
 
   makeAdoption() {
     if (this.adopter && this.pet) {
+      this.pet.isAdopted = true;
       // adiciona pet no array pets do this.adopter
       this.adoptersService.addPetToAdopter(this.adopter.id, this.pet.id);
       this.dialog.open(MsgDialogComponent, {

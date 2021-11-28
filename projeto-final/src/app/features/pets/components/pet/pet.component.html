@@ -38,7 +38,7 @@
       </ul>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="accent" (click)="makeAdoption()">Adotar pet</button>
+      <button mat-raised-button color="accent" (click)="makeAdoption()" *ngIf="pet.isAdopted === false">Adotar pet</button>
     </mat-card-actions>
   </div>
   </mat-card>

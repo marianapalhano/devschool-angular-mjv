@@ -8,4 +8,4 @@
     <a mat-button [routerLink]="['/adopters']" *ngIf="adopter" routerLinkActive="active-link">Adotantes</a>
     <a mat-button [routerLink]="['/adopter-details', adopter.id]" *ngIf="adopter" routerLinkActive="active-link">Perfil</a>
     <a mat-button (click)="exit()" *ngIf="adopter">Sair</a> 
-  </mat-toolbar>
+</mat-toolbar>
