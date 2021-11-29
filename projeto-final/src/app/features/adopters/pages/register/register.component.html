@@ -19,7 +19,7 @@
         <mat-form-field class="field-full-width" appearance="fill">
           <mat-label>CPF</mat-label>
           <input type="text" matInput formControlName="cpf">
-          <mat-error *ngIf="registerForm.controls['cpf'].errors">
+          <mat-error *ngIf="registerForm.controls['cpf'].invalid">
             Por favor informe um CPF válido, somente números.
           </mat-error>
         </mat-form-field>
