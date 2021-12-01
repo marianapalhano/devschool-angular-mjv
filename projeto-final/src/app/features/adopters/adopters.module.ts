@@ -7,6 +7,7 @@ import { AdopterComponent } from './components/adopter/adopter.component';
 import { AdopterListComponent } from './components/adopter-list/adopter-list.component';
 import { AdopterDetailsComponent } from './pages/adopter-details/adopter-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxMaskModule } from 'ngx-mask';
 import { PetsModule } from '../pets/pets.module';
 
 
@@ -23,7 +24,8 @@ import { PetsModule } from '../pets/pets.module';
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    PetsModule
+    PetsModule,
+    NgxMaskModule.forChild()
   ]
 })
 export class AdoptersModule { }
